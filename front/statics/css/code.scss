@@ -1,0 +1,465 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after,.clearfix:before
+{
+    content: "";
+    display: table;
+}
+.clearfix:after
+{
+    clear: both;
+}
+.clearfix
+{
+    *zoom: 1;
+}
+
+body 
+{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    width: 100vw;
+    min-width: 700px;
+    overflow:-Scroll;
+    overflow-x:hidden;
+}
+
+.titleBar 
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 700px;
+    height: 60px;
+    background-color: #03303E;
+    z-index: 100;
+
+    .avatar {
+        position: absolute;
+        right: 5vw;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        img {
+            margin: 10px 0 0 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+
+    
+
+    .persion-menu {
+        position: absolute;
+        top:80px;
+        right: calc(5vw - 40px);
+        padding-top: 10px;
+        width: 140px;
+        height: 180px;
+        background-color: #ffffff;
+        box-shadow:0px 5px 20px hsla(0, 3%, 8%, 0.1);
+        border-radius: 3%;
+        outline:0px;
+        transition: opacity 0.2s;
+        display: none;
+        opacity: 0;
+        input {
+            opacity: 0
+        }
+
+        .triangle{
+            position: absolute;
+            top: -17px;
+            left: calc(70px - 18.5px);
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 17px;
+            border-color:rgb(255, 255, 255);
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-top: none;      
+        }
+
+        .nickname p{
+            width: 80px;
+            cursor: unset;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .nickname:hover{
+            background-color: unset;
+        }
+
+        a {
+            display: inline-block;
+            width: 140px;
+            height: 40px;
+            text-decoration:none;
+            line-height: 40px;
+            color:#8590A6;
+            text-align: left;
+            svg {
+                float: left;
+                margin-top: 10px;
+                margin-left: 20px;
+                width: 20px;
+                height: 20px;
+            }      
+            p {
+                display: block;
+                float: left;
+                margin-top: 10px;
+                margin-left: 10px;
+                height: 20px;
+                line-height: 20px;
+                width: 80px;
+                font-size: 16.5px;
+            }
+        }
+        a:hover{
+            background-color: #F6F6F6;
+        }
+    }
+    
+}
+
+.topBox
+{
+    width: 60%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    margin-top: 70px;
+    border-bottom: 1px solid #e5e5e5;
+
+    .home{
+        width: 22px;
+        height: 60px;
+        float: left;
+        cursor: pointer;
+        margin-right: 10px;
+        svg {
+            margin-top: 19px;
+        }
+    }
+
+    .folderTitle
+        {   
+            float: left;
+            width: 60%;
+            height: 60px;
+            line-height: 60px;
+            color: #707070;
+            
+            div {
+                display: inline-block;
+            }
+            .projectName {
+                cursor: pointer;
+                font-weight: 600;
+            }
+            .folderIndex {
+                cursor: pointer;
+            }
+        }
+
+}
+
+.editorTools{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    width: calc(60% - 40px);
+    padding:0 20px;
+    height: 60px;
+    line-height: 60px;
+    margin: 20px  auto 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FAFAFA;
+    color: #707070;
+    border: 1px solid #e5e5e5;
+    // border-bottom: unset;
+
+    svg {
+        float: left;
+        margin-top: 22px;
+        margin: 22px 10px;
+    }
+
+    .fileName {
+        float: left;
+        height: 60px;
+        line-height: 60px;
+        font-weight: 700;
+        color: black;
+    }
+
+    .size {
+        float: left;
+        margin-left: 10px;
+    }
+
+    .copy {
+        position: relative;
+        float: right;
+        margin-top: 15px;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid #EEEEEE;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-right: unset;
+        cursor: pointer;
+        svg {
+            float:left;
+            margin-top: 7px;
+            margin-left: 7px;
+        }
+        .tips {
+            position: absolute;
+            top: -42px;
+            left: -15px;
+            color: white;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 160px;
+            background-color: black;
+            border-radius: 5px;
+            display: none;
+
+            .triangle{
+                position: absolute;
+                top: 30px;
+                left: 20px;
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                // border-width: 10px;
+                border: 10px solid transparent;
+                border-top-color: black ;    
+            }
+        }
+    }
+
+    .rawCode {
+        position: relative;
+        float: right;
+        margin-top: 15px;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid #EEEEEE;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-right: unset;
+        cursor: pointer;
+        svg {
+            float:left;
+            margin-top: 7px;
+            margin-left: 7px;
+        }
+        .tips {
+            position: absolute;
+            top: -42px;
+            left: -30px;
+            color: white;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 90px;
+            background-color: black;
+            border-radius: 5px;
+            display: none;
+
+            .triangle{
+                position: absolute;
+                top: 30px;
+                left: 35px;
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                // border-width: 10px;
+                border: 10px solid transparent;
+                border-top-color: black ;    
+            }
+        }
+    }
+
+    .download {
+        position: relative;
+        float: right;
+        margin-top: 15px;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid #EEEEEE;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        svg {
+            float:left;
+            margin-top: 7px;
+            margin-left: 7px;
+        }
+        .tips {
+            position: absolute;
+            top: -42px;
+            left: -30px;
+            color: white;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 90px;
+            background-color: black;
+            border-radius: 5px;
+            display: none;
+
+            .triangle{
+                position: absolute;
+                top: 30px;
+                left: 35px;
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                // border-width: 10px;
+                border: 10px solid transparent;
+                border-top-color: black ;    
+            }
+        }
+    }
+    .edit {
+        float: right;
+        margin-top: 15px;
+        margin-left: 20px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        background-color: white;
+        text-align: center;
+        color: black;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: 1px solid #e5e5e5;
+        border-right: unset;
+        cursor: pointer;
+    }
+    .delete{
+        float: right;
+        margin-top: 15px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        background-color: white;
+        text-align: center;
+        color: white;
+        background-color: #DB3B21;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: 1px solid #e5e5e5;
+        cursor: pointer;
+    }
+    .delete:hover{
+        background-color: #C0341D;
+    }
+
+    .commit {
+        float: right;
+        margin-top: 15px;
+        margin-right: 20px;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 20px;
+        background-color: white;
+        text-align: center;
+        color: white;
+        background-color: #23A9F2;
+        border-radius: 5px;
+        border: 1px solid #e5e5e5;
+        cursor: pointer;
+        display: none;
+    }
+    .commit:hover{
+        background-color: #1c92d1;
+    }
+
+    .copy:hover,.download:hover,.rawCode:hover,.edit:hover {
+        background-color: #F0F0F0;
+    }
+    .copy:hover .tips,.download:hover .tips,.rawCode:hover .tips{
+        display: block;
+    }
+
+
+}
+
+#codeArea{
+    margin: 0 auto;
+    width: 60%;
+    border: 1px solid #e5e5e5;
+    pointer-events: none;
+    
+    .ace_gutter-cell  {
+        color: #AFAFAF;
+        background-color: #FAFAFA;
+    }
+    .ace_comment {
+        color: #AFAFAF;
+    }
+}
+
+
+#hide-codeArea {
+    display: none;
+}
+
+.notAllowShowCode {
+    position: relative;
+    margin: 0 auto;
+    width: calc(60% + 2px);
+    height: 300px;
+    background-color: #EEEEEE;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+    .download {
+        position: absolute;
+        left: calc( 50% - 200px);
+        top: 90px;
+        width: 400px;
+        height: 120px;
+        cursor: pointer;
+        svg {
+            margin-top: 12px;
+            left: 188px;
+            text-align: center;
+            width: 100%;
+            path {
+                fill: #303030;
+            }
+        }
+        .text {
+            margin: 0 auto;
+            height: 60px;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #303030;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
+}

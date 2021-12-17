@@ -1,0 +1,3 @@
+*.vscode
+demo
+./server/linu_build.bat

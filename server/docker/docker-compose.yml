@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  python-3.7:
+    image: library/python-3.7:latest
+    restart: always
+    container_name: websoon-[USERID]
+    ports:
+      - 9000:9000
+    entrypoint: "tail -f requirements.txt"
+    volumes:
+      - ./CloudFunc:/CloudFunc
+    deploy:
+        resources:
+          limits:
+            cpus: '0.5'
+            memory: 24M
+
+    

@@ -1,0 +1,662 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after,.clearfix:before
+{
+    content: "";
+    display: table;
+}
+.clearfix:after
+{
+    clear: both;
+}
+.clearfix
+{
+    *zoom: 1;
+}
+
+body 
+{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    width: 100vw;
+    min-width: 700px;
+}
+
+.titleBar 
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 700px;
+    height: 60px;
+    background-color: #03303E;
+    z-index: 100;
+
+    .avatar {
+        position: absolute;
+        right: 5vw;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        img {
+            margin: 10px 0 0 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+
+    
+
+    .persion-menu {
+        position: absolute;
+        top:80px;
+        right: calc(5vw - 40px);
+        padding-top: 10px;
+        width: 140px;
+        height: 180px;
+        background-color: #ffffff;
+        box-shadow:0px 5px 20px hsla(0, 3%, 8%, 0.1);
+        border-radius: 3%;
+        outline:0px;
+        transition: opacity 0.2s;
+        display: none;
+        opacity: 0;
+        input {
+            opacity: 0
+        }
+
+        .triangle{
+            position: absolute;
+            top: -17px;
+            left: calc(70px - 18.5px);
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 17px;
+            border-color:rgb(255, 255, 255);
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-top: none;      
+        }
+
+        .nickname p{
+            width: 80px;
+            cursor: unset;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .nickname:hover{
+            background-color: unset;
+        }
+
+        a {
+            display: inline-block;
+            width: 140px;
+            height: 40px;
+            text-decoration:none;
+            line-height: 40px;
+            color:#8590A6;
+            text-align: left;
+            svg {
+                float: left;
+                margin-top: 10px;
+                margin-left: 20px;
+                width: 20px;
+                height: 20px;
+            }      
+            p {
+                display: block;
+                float: left;
+                margin-top: 10px;
+                margin-left: 10px;
+                height: 20px;
+                line-height: 20px;
+                width: 80px;
+                font-size: 16.5px;
+            }
+        }
+        a:hover{
+            background-color: #F6F6F6;
+        }
+    }
+    
+}
+
+
+.topBox
+{
+    position: relative;
+    width: 60%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    margin-top: 70px;
+    border-bottom: 1px solid #e5e5e5;
+    .home{
+        width: 22px;
+        height: 60px;
+        float: left;
+        cursor: pointer;
+        margin-right: 10px;
+        svg {
+            margin-top: 19px;
+        }
+    }
+
+    .folderTitle
+    {   
+        float: left;
+        width: 60%;
+        height: 60px;
+        line-height: 60px;
+        color: #707070;
+        
+        div {
+            display: inline-block;
+        }
+        .projectName {
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .folderIndex {
+            cursor: pointer;
+        }
+        .addObject{
+            position:relative;
+            cursor: pointer;
+            svg{
+                width: 20px;
+                height: 20px;
+                position:absolute;
+                top:-15px;
+                left:5px;
+            }
+            svg:hover path{
+                fill: black;
+            }
+            .menu {
+                position: absolute;
+                top: 10px;
+                width: 200px;
+                height: 160px;
+                border-radius: 5px;
+                background-color: white;
+                border: 1px solid #e5e5e5;
+                box-sizing: border-box;
+                display: none;
+
+                div {
+                    float: left;
+                    width: 100%;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: left;
+                    text-indent: 2em;
+                    border-bottom: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                }
+                div:hover{
+                    background-color: #EEEEEE;
+                }
+                input {
+                    position: fixed;
+                    top: -100px;
+                }
+            }
+        }
+    }
+    .download {
+        position: relative;
+        float: right;
+        margin-top: 15px;
+        width: 90px;
+        height: 36px;
+        background-color: white;
+        border: 2px solid #EAEAEA;
+        box-sizing: border-box;
+        border-radius: 5px;
+        cursor: pointer;
+        svg:nth-child(1) {
+            float:left;
+            margin-top: 6px;
+            margin-left: 7px;
+        }
+        svg:nth-child(2) {
+            float:right;
+            margin-top: 6px;
+            margin-right: 7px;
+        }
+        .tips {
+            position: absolute;
+            top:0px;
+            left: 110px;
+            color: white;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 90px;
+            background-color: black;
+            border-radius: 5px;
+            display: none;
+
+            .triangle{
+                position: absolute;
+                top: 10px;
+                left: -10px;
+                display: block;
+                width: 0;
+                height: 0;
+                // border-width: 10px;
+                border-top: 6px solid transparent;
+                border-right: 10px solid black;
+                border-bottom: 6px solid transparent;  
+            }
+        }
+        
+        .select {
+            position: fixed;
+            top: -200px;
+        }
+    }
+    .selectbox  {
+        position: absolute;
+        top: 58px;
+        right:-1px;
+        width: 200px;
+        height: 120px;
+        border-radius: 5px;
+        border: 2px solid #EAEAEA;
+        background-color: white;
+        display: none;
+
+        div {
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+
+        div:nth-child(1){
+            border-bottom: 1px solid #EAEAEA;
+        }
+
+        div:hover{
+            background-color: #F0F0F0;
+        }
+    }
+    .download:hover{
+        background-color: #F0F0F0;
+    }
+    .download:hover .tips{
+        display: block;
+    }
+
+    
+}
+
+.uploadBox{
+    position: fixed;
+    top: 120px;
+    left: 25%;
+    width: 50%;
+    height: 40%;
+    min-width: 850px;
+    background-color: white;
+    z-index: 100;
+    border-radius: 5px;
+    display: none;
+
+    .head {
+        position: relative;
+        height: 6vh;
+        line-height: 6vh;
+        text-indent: 2em;
+        border-bottom: 1px solid #E5E5E5;
+        font-weight: 500;
+
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            cursor: pointer;
+        }
+        .closebtn:hover path{
+            fill:red
+        }
+    }
+
+    .fileArea {
+        margin: 20px 10%;
+        width: 80%;
+        height: 20vh;
+        line-height: 20vh;
+        text-align: center;
+        border: 2px dashed #E5E5E5;
+        box-sizing: border-box;
+        color: #4C4C4C;
+        overflow: hidden;
+        
+
+        .noFiles {
+            color:#EBEBEB;
+            font-size: 50px;
+            font-weight: 500;
+        }
+        .uploadfiles {
+            width: 103%;
+            height: 100%;
+            overflow-y: auto;
+
+            .file {
+                float: left;
+                width: 25%;
+                height: 5vh;
+                margin: 1vh 0;
+                line-height: 2.5vh;
+    
+                .name {
+                    margin-left: 10%;
+                    height: 50%;
+                    width: 80%;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
+                }
+                a {
+                    display: inline-block;
+                    height: 50%;
+                    margin: 0;
+                }
+                
+            }
+        }
+
+        
+    }
+
+    a {
+        margin-left: calc(50% - 60px);
+        width: 120px;
+        text-align: center;
+        display: inline-block;
+        color: #3E80C1;
+        text-decoration: none;
+    }
+
+    .commit {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #34D372;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .cancel{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background-color: #FF7270;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #uploadFile{
+        display: none;
+    }
+    .uploadingbox {
+        position: absolute;
+        bottom: 5px;
+        left: calc(50% - 150px);
+        width: 300px;
+        height: 60px;
+        transition: bottom 0.4s;
+        border-radius: 2px;
+        z-index: 10;
+
+        .ratebox {
+            position: absolute;
+            bottom: 20px;
+            left: 5%;
+            height: 20px;
+            width: 90%;
+            background-color: #E9ECEF;
+            border-radius: 5px;
+            .rate {
+                position: absolute;
+                top: 0;
+                height: 100%;
+                width: 0%;
+                border-radius: 5px;
+                background-color: #007BFF;
+            }
+        }
+    
+        
+    }
+    
+}
+
+
+.descript 
+{
+    width: calc(60% - 20px);
+    padding-left: 20px;
+    height: 60px;
+    line-height: 60px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: #FAFAFA;
+    color: #707070;
+    border: 1px solid #e5e5e5;
+    .title{
+        float: left;
+        margin-right: 5px;
+        display: inline-block;
+    }
+    .content{
+        float: left;
+        display: inline-block;
+    }
+    .edit{
+        float: left;
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 4px;
+        margin-left: 5px;
+        display: none;
+    }
+    .edit:hover  path{
+        fill: black;
+    }
+}
+.descript:hover .edit{
+    display: block;
+}
+
+.descriptEditor {
+    position: fixed;
+    top: -160px;
+    left: calc(50% - 275px);
+    width: 550px;
+    height: 200px;
+    background-color: white;
+    z-index: 11;
+    transition: top 0.2s;
+
+    textarea {
+        position: absolute;
+        left: 8%;
+        top: 60px;
+        width: 80%;
+        height: 40%;
+        line-height: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #8A8A8A;
+        letter-spacing:1px;
+        padding: 10px;
+        border: unset;
+        border: 2px solid #e5e5e5;
+        resize: none;
+        outline: unset;
+    }
+
+    .stringCount {
+        position: absolute;
+        bottom: 20%;
+        right: 10%;
+        color: #949494;
+        p {
+            display: inline-block;
+        }
+    }
+
+    .commit {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
+        svg:hover path{
+            fill: #3BD076;
+        }
+    }
+    .cancel {
+        position: absolute;
+        top: 5%;
+        right: 15%;
+        cursor: pointer;
+        svg:hover path{
+            fill: #EC4638;
+        }
+    }
+
+    .warming {
+        position: absolute;
+        bottom:5%;
+        left: 2%;
+        width: 96%;
+        color: red;
+        display: none;
+        text-align: center;
+    }
+}
+
+.files 
+{
+    width: 60%;
+    margin: 0 auto;
+    border-collapse:collapse;
+    border-radius: 5px;
+    tr {
+        height: 45px;
+        line-height: 45px;
+        text-align: left;
+        border:0.5px solid #E5E5E5;
+
+        svg {
+            float: left;
+            height: 45px;
+        }
+
+        span {
+            float: left;
+            display: inline-block;
+            height: 45px;
+            line-height: 45px;
+            text-indent: 5px;
+        }
+
+
+        th {
+            background-color: #FAFAFA;
+            font-weight: 400;
+            padding-left: 20px;
+        }
+        td {
+            padding-left: 20px;
+            cursor: pointer;
+            box-sizing: border-box;
+            border: 0.5px solid #E5E5E5;
+        }
+        td:hover{
+            background-color: #F6FAFE;
+            border: 0.5px solid #B8D6F4;
+        }
+        td:hover .delete{
+            display: block;
+        }
+        td:hover .home{
+            display: block;
+        }
+
+        .homeflag {
+            float: left;
+            margin-left: 10px;
+            margin-top: 12px;
+            width: 35px;
+            height: 15px;
+            line-height: 15px;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            color: red;
+            border: 3px solid red;
+            border-radius: 5px;
+        }
+    
+        .delete {
+            float: right;
+            margin: 7.5px;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #FF7270;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+        .delete:hover{
+            background-color: #ff4340;
+        }
+        .home{
+            float: right;
+            margin: 7.5px;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #23A9F2;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            display: none;
+        }
+        .home:hover{
+            background-color: #2384f2;
+        }
+
+    }
+    
+}
+

@@ -1,0 +1,1093 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:after,.clearfix:before{
+    content: "";
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    width: 100vw;
+    min-width: 1500px;
+}
+
+.titleBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 1500px;
+    height: 60px;
+    background-color: #03303E;
+    z-index: 100;
+
+    .avatar {
+        position: absolute;
+        right: 5vw;
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+        img {
+            margin: 10px 0 0 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+
+    
+
+    .persion-menu {
+        position: absolute;
+        top:80px;
+        right: calc(5vw - 40px);
+        padding-top: 10px;
+        width: 140px;
+        // height: 180px;
+        height: 100px;
+        background-color: #ffffff;
+        box-shadow:0px 5px 20px hsla(0, 3%, 8%, 0.1);
+        border-radius: 3%;
+        outline:0px;
+        transition: opacity 0.2s;
+        display: none;
+        opacity: 0;
+        input {
+            opacity: 0
+        }
+
+        .triangle{
+            position: absolute;
+            top: -17px;
+            left: calc(70px - 18.5px);
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 17px;
+            border-color:rgb(255, 255, 255);
+            border-right-color: transparent;
+            border-left-color: transparent;
+            border-top: none;      
+        }
+
+        .nickname p{
+            width: 80px;
+            cursor: unset;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        .nickname:hover{
+            background-color: unset;
+        }
+
+        a {
+            display: inline-block;
+            width: 140px;
+            height: 40px;
+            text-decoration:none;
+            line-height: 40px;
+            color:#8590A6;
+            text-align: left;
+            svg {
+                float: left;
+                margin-top: 10px;
+                margin-left: 20px;
+                width: 20px;
+                height: 20px;
+            }      
+            p {
+                display: block;
+                float: left;
+                margin-top: 10px;
+                margin-left: 10px;
+                height: 20px;
+                line-height: 20px;
+                width: 80px;
+                font-size: 16.5px;
+            }
+        }
+        a:hover{
+            background-color: #F6F6F6;
+        }
+    }
+    
+}
+
+.head {
+    position: absolute;
+    top: 60px;
+    width: 100vw;
+    min-width: 1500px;
+    background-color: #FAFAFA;
+    .avatar {
+        float: left;
+        margin-top: 2vh;
+        width: 100%;
+        height: 136px;
+        img {
+            position: absolute;
+            left: calc(50% - 68px);
+            width: 136px;
+            height: 136px;
+            border-radius: 50%;
+        }
+    }
+
+    .nickname {
+        float: left;
+        width: 100%;
+        margin-top: 2vh;
+        p {
+            margin: 0 auto;
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            width: 170px;
+            font-size: 25px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+        }
+        
+    }
+    .head-introduction {
+        float: left;
+        margin:2vh 0 4vh 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.middlebody{
+    width: 1300px;
+    margin: 350px auto;
+    
+    .projects {
+        float: left;
+        width: 600px;
+    
+        h4 {
+            position: relative;
+            font-size: 24px;
+            color: #2e2e2e;
+            font-weight: 600;
+            text-align: left;
+            padding: 5vh 0 2vh 0;
+            border-bottom: 1px solid #e5e5e5;
+    
+            .addProject {
+                position: absolute;
+                bottom: 1vh;
+                right: 0;
+                color: #707070;
+        
+                svg {
+                    fill: #707070;
+                    cursor: pointer;
+                }
+                svg:hover {
+                    fill: #0056C4;
+                }
+            }
+        }
+    
+        .addProjectBox {
+            position: fixed;
+            top: -100px;
+            left: calc(50% - 275px);
+            width: 550px;
+            height: 150px;
+            background-color: white;
+            z-index: 11;
+            transition: top 0.2s;
+    
+            input {
+                position: absolute;
+                left: 15%;
+                top: 70px;
+                width: 70%;
+                font-size: 20px;
+                letter-spacing:0.5px;
+                padding-bottom: 10px;
+                text-align: center;
+                border: unset;
+                border-bottom: 2px solid #4195C2;
+                outline: unset;
+            }
+    
+            .commit {
+                position: absolute;
+                top: 10%;
+                right: 5%;
+                cursor: pointer;
+                svg:hover path{
+                    fill: #3BD076;
+                }
+            }
+            .cancel {
+                position: absolute;
+                top: 10%;
+                right: 15%;
+                cursor: pointer;
+                svg:hover path{
+                    fill: #EC4638;
+                }
+            }
+    
+            .warming {
+                position: absolute;
+                bottom:10%;
+                left: 2%;
+                width: 96%;
+                color: red;
+                display: none;
+                text-align: center;
+            }
+        }
+        .projectTop {
+            width: 100%;
+            overflow: hidden;
+        }
+        .projectInfo {
+            width: calc(100% + 20px);
+            height: 55vh;
+            overflow-y: scroll;
+            .projectItem {
+                display: inline-block;
+                position:relative;
+                width: 600px;
+                height: 100px;
+                min-height: 80px;
+                border-bottom: 1px solid #e5e5e5;
+                cursor: pointer;
+                color: unset;
+                .light {
+                    position: absolute;
+                    top: 15px;
+                    left: 20px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #FF7270;
+                    background-color: #34D372;
+                }
+    
+                .projectHead {
+                    position: absolute;
+                    top:10px;
+                    left:40px;
+    
+                    .projectName {
+                        float: left;
+                        font-weight: 600;
+                    }
+                    .author {
+                        float: right;   
+                        color: #89818B;
+                    }
+                }
+                
+                
+                .projectCTime {
+                    position: absolute;
+                    top:10px;
+                    right: 10px;
+                    color: #89818B;
+                }
+                .projectIntroduce {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 20px;
+                    width: 70%;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    white-space: nowrap;
+                }
+                .deleteProject {
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                }
+                .deleteProject:hover path{
+                    fill: #FF7270;
+                }
+                .previewProject {
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 50px;
+                }
+                .previewProject:hover path{
+                    fill:#34D372;
+                }
+                .shareWebsite {
+                    cursor: pointer;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 90px;
+                }
+                .shareWebsite:hover path{
+                    fill:#23A9F2;
+                }
+            }
+            .projectItem:hover {
+                background-color: #f8f8f888;
+            }
+        }
+        .noProjects {
+            width: 100%;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: 600;
+            color: #e8e8e8e8;
+        }
+    }
+
+    .apis {
+        float: left;
+        margin-left: 100px;
+        width: 600px;
+        h4 {
+            position: relative;
+            font-size: 24px;
+            color: #2e2e2e;
+            font-weight: 600;
+            text-align: left;
+            padding: 5vh 0 2vh 0;
+            border-bottom: 1px solid #e5e5e5;
+            .addApi {
+                position: absolute;
+                bottom: 1vh;
+                right: 0;
+                color: #707070;
+        
+                svg {
+                    fill: #707070;
+                    cursor: pointer;
+                }
+                svg:hover {
+                    fill: #0056C4;
+                }
+            }
+        }
+        .addApiBox {
+            position: fixed;
+            top: 60px;
+            right:-550px;
+            width: 530px;
+            // height: 120vh;
+            height: calc(100vh - 60px);
+            background-color: white;
+            z-index: 11;
+            overflow-y: scroll;
+            transition: right 0.2s;
+        
+            .boxhead {
+                margin: 20px 20px;
+                font-size: 32px;
+                color: #525252;
+                font-weight: 500;
+            }
+
+            .title-1 {
+                margin: 60px 20px 20px;
+                font-size: 24px;
+                color: #817f7f;
+                font-weight: 500;
+            }
+            .group {
+                width: 160px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0 40px;
+                border: 1px solid #e5e5e5;
+                border-bottom: unset;
+                font-size: 22px;
+                color: #525252;
+                padding: 0 20px;
+                cursor: pointer;
+                text-align: center;
+                // display: none;
+            }
+            .groupinput {
+                margin-left: 40px;
+                line-height: 40px;
+                width: 300px;
+                height: 42px;
+                display: none;
+                input {
+                    margin: 0;
+                    float: left;
+                    outline: unset;
+                    width: 170px;
+                    letter-spacing: 1px;
+                    height: 40px;
+                    padding: 0 10px;
+                    font-size: 20px;
+                    border: 1px solid #00A1D6;
+                    border-right: unset;
+                }
+                .add_cloudfunc_group {
+                    float: left;
+                    height: 40px;
+                    line-height: 40px;
+                    width: 60px;
+                    background-color:#D9F1F9 ;
+                    border: 1px solid #00A1D6;
+                    color: #00A1D6;
+                    text-align: center;
+                    cursor: pointer;
+                }
+                .cancel_cloudfunc_group {
+                    float: left;
+                    height: 40px;
+                    line-height: 40px;
+                    width: 60px;
+                    background-color:#FF7270 ;
+                    border: 1px solid #FF7270;
+                    color: white;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+            .grouptopbox {
+                position: absolute;
+                left: 40px;
+                width: 200px;
+                overflow:hidden;
+                box-shadow:0px 5px 20px hsla(0, 3%, 8%, 0.1);
+                border: 1px solid #e5e5e5;
+                border-top: unset;
+            }
+            .groupbox {
+                width: 222px;
+                height: 0;
+                max-height: 164px;
+                background-color: white;
+                transition: height 0.2s;
+                overflow-y: scroll;
+                
+                .groupitem {
+                    width: 200px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 16px;
+                    color: #525252;
+                    text-align: center;
+                    box-sizing: content-box;
+                    cursor: pointer;
+                }
+                .groupitem:hover{
+                    background-color: rgb(235, 235, 235);
+                }
+                .create {
+                    color: #3E80C1;
+                }
+            }
+            .groupselect{
+                position: fixed;
+                top: -200px;
+            }
+        
+            .title-2 {
+                margin: 60px 20px 20px;
+                font-size: 24px;
+                color: #817f7f;
+                font-weight: 500;
+            }
+            input::-webkit-input-placeholder { 
+                /* WebKit browsers */ 
+                color: #ccc; 
+            } 
+            .route {
+                width: 280px;
+                height: 40px;
+                margin: 0 40px;
+                outline: unset;
+                letter-spacing: 0.5px;
+                border: 1px solid #e5e5e5;
+                padding: 0 20px;
+                font-size: 24px;
+                color: #525252;
+            }
+        
+            .title-3 {
+                margin: 60px 20px 5px;
+                font-size: 24px;
+                color: #817f7f;
+                font-weight: 500;
+            }
+            .apiDescription {
+                margin:20px 40px 0;
+                padding: 0 20px;
+                width: 300px;
+                height: 80px;
+                line-height: 20px;
+                font-size: 24px;
+                letter-spacing:0.5px;
+                padding: 10px;
+                border: unset;
+                border: 2px solid #e5e5e5;
+                resize: none;
+                outline: unset;
+            }
+        
+            .title-4 {
+                margin: 60px 20px 5px;
+                font-size: 24px;
+                color: #817f7f;
+                font-weight: 500;
+
+                .methodbox {
+                    position: relative;
+                    margin: 20px 20px;
+                    .get {
+                        position: absolute;
+                        top: 0;
+                        left: 210px;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 100px;
+                        text-align: center;
+                        border: 1px solid #E5E5E5;
+                        cursor: pointer;
+                        background-color: #34D372;
+                    }
+                    .post {
+                        position: absolute;
+                        top: 0px;
+                        left: 310px;
+                        height: 30px;
+                        line-height: 30px;
+                        width: 100px;
+                        text-align: center;
+                        border: 1px solid #E5E5E5;
+                        cursor: pointer;
+                        z-index: 10;
+                    }
+                }
+        
+                .uploadCode {
+                    float: right;
+                    margin: 0 40px 20px 0;
+                    width: 120px;
+                    text-align: center;
+                    display: inline-block;
+                    color: #3E80C1;
+                    cursor: pointer;
+                    font-size: 20px;
+                }
+            }
+        
+            .title-5 {
+                position: relative;
+                margin: 60px 20px 5px;
+                font-size: 24px;
+                color: #817f7f;
+                font-weight: 500;
+                .copyApiLink {
+                    position: absolute;
+                    top: 0;
+                    right:40px;
+                    color: #3E80C1;
+                    display: none;
+                    margin-left: 20px;
+                    cursor: pointer;
+                }
+            }
+            .apiLink {
+                margin: 20px 40px;
+                width: 380px;
+                padding:0 20px;
+                height: 40px;
+                line-height: 40px;
+                background-color: #e8e8e8e8;
+                border-radius: 2px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+            #apiLink-hide {
+                position: fixed;
+                right: -200px;
+            }
+
+            .btngroup {
+                margin-top: 60px;
+                height: 80px;
+
+                .build {
+                    float: left;
+                    margin: 0 10px 0 40px;
+                    width: 100px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    color: white;
+                    background-color: #3DD374;
+                    cursor: pointer;
+                }
+                .build:hover{
+                    background-color: #3dca71;
+                }
+    
+                .cancel {
+                    float: left;
+                    margin: 0 10px 0 0px;
+                    width: 100px;
+                    height: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    color: #787878;
+                    background-color: #EEEEEE;
+                    cursor: pointer;
+                }
+                .cancel:hover{
+                    background-color: #dbdbdb;
+                }
+            }
+            
+        
+            #uploadCode {
+                display: none;
+            }
+        
+            #apiCode {
+                margin-left: 40px;
+                width: 80%;
+                border: 1px solid #e5e5e5;
+                // .ace_gutter {
+                //     padding-top: 15px;
+                //     padding-bottom: 15px;
+                // }
+                // .ace_content {
+                //     margin-top: 15px;
+                // }
+            }
+            .warming {
+                margin: 10px 40px;
+                color: #FF7270;
+            }
+            
+            
+        }
+       
+        .noApis{
+            width: 100%;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            font-size: 50px;
+            font-weight: 600;
+            color: #e8e8e8e8;
+        }
+        .cloudFuncTop {
+            width: 100%;
+            overflow:hidden
+        }
+        .cloudFunctionInfo{
+            width: calc(100% + 20px);
+            height: 55vh;
+            overflow-y: scroll;
+            .cloudFuncGroup {
+                position: relative;
+                width: 600px;
+                height: 40px;
+                border: 1px solid #e5e5e5;
+                box-sizing: border-box;
+                border-top: unset;
+                background-color: #F7F7F7;
+                cursor: pointer;
+                .groupName {
+                    float: left;
+                    margin-left: 20px;
+                    line-height: 40px;
+                    font-weight: 600;
+                    // display: none;
+                }
+                .renameinput {
+                    float: left;
+                    line-height: 40px;
+                    width: calc(100% - 24px);
+                    height: 40px;
+                    display: none;
+                    input {
+                        float: left;
+                        outline: unset;
+                        width: 185px;
+                        letter-spacing: 1px;
+                        height: 40px;
+                        line-height: 40px;
+                        padding: 0 20px;
+                        font-weight: 600;
+                        font-size: 15px;
+                        outline: unset;
+                        border: unset;
+                        border-bottom: 1px solid #e5e5e5;
+                        box-sizing: border-box;
+                        border-right: unset;
+                    }
+                    .commmit_group_rename {
+                        float: left;
+                        height: 40px;
+                        line-height: 40px;
+                        width: 70px;
+                        border-bottom: 1px solid #e5e5e5;
+                        border-left: 1px solid #D9F1F9;
+                        border-right: 1px solid #D9F1F9;
+                        background-color: white;
+                        box-sizing: border-box;
+                        color: #00A1D6;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                    .commmit_group_rename:hover{
+                        background-color:#D9F1F9
+                    }
+                }
+                .more {
+                    float: right;
+                    padding-top: 8px;
+                    cursor: pointer;
+                }
+                .morebox {
+                    display: none;
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    width: 100px;
+                    transition: right 0.2s;
+                    z-index: 100;
+                    border: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                    box-shadow:0px 5px 20px hsla(0, 3%, 8%, 0.1);
+                    background-color: white;
+                    border-radius: 5px;
+                    div {
+                        height: 40px;
+                        width: 100px;
+                        line-height: 40px;
+                        text-align: center;
+                    }
+                    div:hover{
+                        background-color: #E5E9EF;
+                    }
+                    
+                }
+                
+            }
+
+            .cloudFunc {
+                height: 0;
+                overflow: hidden;
+                transition: height 0.2s;
+                .nothing {
+                    height: 40px;
+                    line-height: 40px;
+                    font-weight: 600;
+                    color: #e8e8e8e8;
+                    font-size: 20px;
+                    text-align: center;
+                    border-bottom: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                }
+                .cloudFuncItem {
+                    position:relative;
+                    width: 600px;
+                    height: 100px;
+                    min-height: 80px;
+                    border-bottom: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    color: unset;
+                    .route {
+                        position: absolute;
+                        top: 10px;
+                        left: 20px;
+                        font-weight: 600;
+                    }
+                    .method {
+                        position: absolute;
+                        left: 20px;
+                        top: 40px;
+                        font-weight: 600;
+                    }
+                    .id {
+                        position: absolute;
+                        top:10px;
+                        right: 10px;
+                        color: #89818B;
+                    }
+                    .description{
+                        position: absolute;
+                        bottom: 10px;
+                        left: 20px;
+                        width: 70%;
+                        overflow: hidden;
+                        text-overflow:ellipsis;
+                        white-space: nowrap;
+                    }
+                    .delete {
+                        cursor: pointer;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+                    }
+                    .delete:hover path{
+                        fill: #FF7270;
+                    }
+                    .copyapi {
+                        cursor: pointer;
+                        position: absolute;
+                        bottom: 7px;
+                        right: 30px;
+                        
+                    }
+                    .copyapi:hover path{
+                        fill:#23A9F2;
+                    }
+                    .hide {
+                        position: fixed;
+                        top: -100px;
+                    }
+                }
+            }
+
+            
+        }
+    }
+}
+
+.addCloudFuncGroupBox{
+    position: fixed;
+    top: -100px;
+    left: calc(50% - 275px);
+    width: 550px;
+    height: 150px;
+    background-color: white;
+    z-index: 11;
+    transition: top 0.2s;
+
+    input {
+        position: absolute;
+        left: 15%;
+        top: 70px;
+        width: 70%;
+        font-size: 20px;
+        letter-spacing:0.5px;
+        padding-bottom: 10px;
+        text-align: center;
+        border: unset;
+        border-bottom: 2px solid #4195C2;
+        outline: unset;
+    }
+
+    .commit {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        cursor: pointer;
+        svg:hover path{
+            fill: #3BD076;
+        }
+    }
+    .cancel {
+        position: absolute;
+        top: 10%;
+        right: 15%;
+        cursor: pointer;
+        svg:hover path{
+            fill: #EC4638;
+        }
+    }
+
+    .warming {
+        position: absolute;
+        bottom:10%;
+        left: 2%;
+        width: 96%;
+        color: red;
+        display: none;
+        text-align: center;
+    }
+}
+
+
+
+.shareWebsiteBox{
+    position: fixed;
+    top: calc(50vh - 300px);
+    left: calc(50vw - 250px);
+    width: 500px;
+    height: 650px;
+    background-color: white;
+    z-index: 100;
+    border-radius: 2px;
+    display: none;
+    
+    #title-1 {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        font-size: 24px;
+        color: #525252;
+        font-weight: 500;
+    }
+    #title-2 {
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        font-size: 20px;
+        color: #817f7f;
+        font-weight: 500;
+    }
+    #title-3 {
+        position: absolute;
+        top: 40%;
+        left: 5%;
+        font-size: 20px;
+        color: #817f7f;
+        font-weight: 500;
+    }
+
+    #shareablelink{
+        position: absolute;
+        top: 22%;
+        left: 5%;
+        width: 88%;
+        height: 45px;
+        outline: unset;
+        border: 1px solid #acacac;
+        padding: 0 1%;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    #hidelink{
+        position: fixed;
+        top: -100px;
+    }
+    .upgroup{
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        width: 90%;
+        height: 40px;
+        .upbtn {
+            float: left;
+            width: calc(100% / 3);
+            text-align: center;
+            cursor: pointer;
+        }
+        .upbtn:hover path{
+            fill: #8a8a8a; 
+        }
+    }
+
+    .downgroup{
+        position: absolute;
+        top: 77%;
+        left: 5%;
+        width: 90%;
+        height: 40px;
+        .downbtn {
+            float: left;
+            width: calc(100% / 3);
+            text-align: center;
+            cursor: pointer;
+        }
+        .downbtn:hover path{
+            fill: #8a8a8a
+        }
+    }
+
+    .datebox {
+        position: absolute;
+        left: 5%;
+        top: 57%;
+        width: 90%;
+        height: 18%;
+
+        .item{
+            float: left;
+            width: calc(100%/3);
+            height: 100%;
+            border:2px solid #F2F2F2;
+            border-right: unset;
+            box-sizing: border-box;
+
+            .title {
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                font-weight: 500;
+                font-size: 20px;
+                color: #757773;
+            }
+
+            .date {
+                width: 100%;
+                height: 68px;
+                line-height: 50px;
+                text-align: center;
+                font-size: 45px;
+                color: #555454;
+            }
+        }
+        .item:nth-child(3){
+            border-right:2px solid #F2F2F2;
+        }
+    }
+
+    .copylink {
+        position: absolute;
+        bottom: 2%;
+        left:calc(50% - 100px);
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: white;
+        border-radius: 2px;
+        background-color: #3DD374;
+        cursor: pointer;
+    }
+    .copylink:hover{
+        background-color: #3dca71;
+    }
+    .cancel {
+        position: absolute;
+        bottom: 2%;
+        right:calc(50% - 90px);
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #787878;
+        border-radius: 2px;
+        background-color: #EEEEEE;
+        cursor: pointer;
+    }
+    .cancel:hover{
+        background-color: #dbdbdb;
+    }
+    
+}
+
+
+
+
