@@ -1,5 +1,0 @@
-*.vscode
-/demo/
-server/linux_build.bat
-server/params_local.ini
-.gitignore
