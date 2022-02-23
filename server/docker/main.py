@@ -11,7 +11,7 @@ context = {
     "id":fid,
     "group":sys.argv[2],
     "author":sys.argv[1],
-    "memory_limit_in_mb":24,
+    "memory_limit_in_mb":100,
     "time_limit_in_ms":2000,
     "timestrap":int(time.time())
 }

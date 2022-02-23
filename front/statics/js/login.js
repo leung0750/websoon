@@ -4,8 +4,8 @@ $(document).ready(()=>{
 })
 
 // 回调登录状态
-
-var ws = new WebSocket("wss://wb.deallate.site/login/islogin")
+var islogin_websocket_url = "your host" + "/login/islogin"
+var ws = new WebSocket(islogin_websocket_url)
 
 ws.onopen = () => {
     qrcode()
