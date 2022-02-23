@@ -12,8 +12,8 @@
 
 # 安装和使用
 
-1. 服务安装docker；
-2. 填写params相应内容（QrcodeSecret为扫码登录使用的秘钥，具体操作见http://login.vicy.cn/， 感谢码上登录技术支持！）；
+1. 服务器安装docker；
+2. 填写params相应内容（QrcodeSecret为扫码登录使用的秘钥，具体操作见http://login.vicy.cn/， 感谢 码上登录 技术支持！）；
 3. front/js/login.js 中的 islogin_websocket_url 为服务部署好的websocket服务地址，例如 wss://xx.xxx.com/login/islogin；
 4. 部署好域名，nginx代理（假若你有域名）；
 5. 编译(前提有golang环境，否则直接下载二进制文件（websoon）启动就好)；
