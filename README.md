@@ -22,4 +22,4 @@
 >⚠️本项目最终为了方便上线小项目，例如简单的物联网应用，以及帮助前端新手跳过部署服务器难关，请勿在生产环境中使用 ~~
 
 
-![home_page.png](https://github.com/edison-cl/websoon/blob/master/images/case.jpg?raw=true)
+![home_page.png](https://bimg.bemfa.com/234296e355adfcd4b3909cd632cd9d48-dfa181dbd6de558b08b918c44c1ec1ff-1645610400.jpg)
